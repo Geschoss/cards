@@ -1,0 +1,19 @@
+{
+  "name": "cards",
+  "version": "0.0.1",
+  "description": "cli app for learn english word",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node ./src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geschoss/cards.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Geschoss/cards/issues"
+  },
+  "homepage": "https://github.com/Geschoss/cards#readme"
+}
