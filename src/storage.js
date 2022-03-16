@@ -4,7 +4,10 @@ const fs = require('fs');
 
 const split = (splitter) => (str) => str.split(splitter);
 
-class CSVStorage {
+const ROW_SPLITTER = '\n';
+const KEYS_SPLITTER = '|';
+
+class FileStorage {
   constructor(path, keys) {
     this.path = path;
     this.keys = keys;
@@ -14,21 +17,23 @@ class CSVStorage {
     const data = await fs.promises.readFile(this.path, 'utf8');
 
     return data
-      .split('\n')
+      .split(ROW_SPLITTER)
       .filter((row) => row !== '')
-      .map(split(','))
+      .map(split(KEYS_SPLITTER))
       .map(this.cardFromRow);
   }
   async append(card) {
     const row = this.rowFromCard(card);
-    await fs.promises.appendFile(this.path, `${row}\n`);
+    await fs.promises.appendFile(this.path, `${row}${ROW_SPLITTER}`);
   }
 
   cardFromRow = (row) =>
     this.keys.reduce((acc, key, index) => ({ ...acc, [key]: row[index] }), {});
 
   rowFromCard = (card) =>
-    this.keys.reduce((acc, key) => [...acc, card[key]], '').join(',');
+    this.keys.reduce((acc, key) => [...acc, card[key]], '').join(KEYS_SPLITTER);
 }
 
-module.exports = CSVStorage;
+module.exports = {
+  FileStorage,
+};

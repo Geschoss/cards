@@ -10,7 +10,6 @@ class Deck {
   async init() {
     this.cards = await this.storage.read();
     this.size = this.cards.length;
-    console.log(`Deck ready! deck size id ${this.size}`);
   }
 
   getRandom() {
@@ -22,7 +21,6 @@ class Deck {
     this.cards.push(card);
     this.size = this.cards.length;
     await this.storage.append(card);
-    console.log(`New card added`);
   }
 }
 
