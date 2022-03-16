@@ -7,10 +7,17 @@ const split = (splitter) => (str) => str.split(splitter);
 const ROW_SPLITTER = '\n';
 const KEYS_SPLITTER = '|';
 
-class FileStorage {
-  constructor(path, keys) {
+class Storage {
+  async read() {
+    return [];
+  }
+  async append() {}
+}
+
+class FileStorage extends Storage {
+  constructor(path) {
+    super();
     this.path = path;
-    this.keys = keys;
   }
 
   async read() {
@@ -27,8 +34,11 @@ class FileStorage {
     await fs.promises.appendFile(this.path, `${row}${ROW_SPLITTER}`);
   }
 
-  cardFromRow = (row) =>
-    this.keys.reduce((acc, key, index) => ({ ...acc, [key]: row[index] }), {});
+  cardFromRow = ([english, russian, description]) => ({
+    english,
+    russian: russian.split(','),
+    description,
+  });
 
   rowFromCard = (card) =>
     this.keys.reduce((acc, key) => [...acc, card[key]], '').join(KEYS_SPLITTER);

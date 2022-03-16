@@ -14,3 +14,5 @@ const card = {
 };
 
 keys.reduce((acc, key, index) => ([...acc, card[key]]), '').join(','); /* ?*/
+
+'sdf'.slice(0, -1) /* ? */

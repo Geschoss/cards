@@ -1,11 +1,11 @@
 'use strict';
 
-const { states } = require('./states.js');
-
 class Game {
-  constructor({ deck, process }) {
+  constructor({ deck, process, states }) {
     this.deck = deck;
+    this.card = {};
     this.input = {};
+    this.states = states;
     this.process = process;
   }
 
@@ -13,8 +13,12 @@ class Game {
     this.process.stdin.setRawMode(true);
     this.process.stdin.on('keypress', this.keypress);
 
-    this.state = states['MainMenuState'];
-    this.changeState(states['MainMenuState']);
+    this.state = this.states['MainMenuState'];
+    this.state.enter(this);
+  }
+
+  shufflуDeck() {
+    this.card = this.deck.getCard();
   }
 
   keypress = (_, key) => {
@@ -26,17 +30,23 @@ class Game {
     this.state.execute(this);
   }
 
-  changeState(newState) {
+  changeState(newStateName) {
+    const state = this.states[newStateName];
     this.state.exit(this);
-    this.state = newState;
+    this.state = state;
     this.state.enter(this);
   }
 
+  // TODO вынести в cli
   write(str) {
     this.process.stdout.write(str);
   }
   clear() {
     this.write('\x1Bc');
+  }
+
+  exit() {
+    this.process.exit();
   }
 }
 

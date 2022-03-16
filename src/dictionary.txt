@@ -1,3 +1,4 @@
-dictionary|словарь|source in print or electronic form containing words usually alphabetically arranged along with information about their forms
-through|через|used as a function word to indicate movement into at one side or point and out at another and especially the opposite side of
-persists|сохраняется|on resolutely or stubbornly in spite of opposition
+dictionary|словарь,словари|: a reference source in print or electronic form containing words usually alphabetically arranged along with information about their forms, pronunciations, functions, etymologies, meanings, and syntactic and idiomatic uses
+through|через,посредством,сквозь,благодаря|used as a function word to indicate movement into at one side or point and out at another and especially the opposite side of
+persist|сохраняться,остаются,продолжатся|: to continue to exist especially past a usual, expected, or normal time
+overtures|инициативы,попытки,авансы,увертюры,увертюр|: an initiative toward agreement or action

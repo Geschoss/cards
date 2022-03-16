@@ -12,7 +12,8 @@ class Deck {
     this.size = this.cards.length;
   }
 
-  getRandom() {
+  // TODO add stategy
+  getCard() {
     const cardIndex = Math.floor(Math.random() * this.size);
     return this.cards[cardIndex];
   }
