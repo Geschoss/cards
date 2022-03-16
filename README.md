@@ -1,2 +1,2 @@
 # cards
-learn english word
+learn english words
