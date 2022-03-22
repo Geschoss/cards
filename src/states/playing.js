@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseState = require('./base.js');
+const { BaseState } = require('./base.js');
 
 class PlayingState extends BaseState {
   enter(game) {
@@ -49,14 +49,14 @@ class PlayingState extends BaseState {
     game.write('1: Show description.\n');
     game.write('0: Back to main menu.\n');
     game.write('\n');
-    
+
     game.write(`english: ${game.card.english}\n`);
     if (this.showDescription) {
       game.write(`description: ${game.card.description}\n`);
     }
     game.write(`guesses: [${this.guesses.join(',')}]`);
     game.write('\n');
-    game.write(`>: ${this.translate}`);
+    game.write(`> ${this.translate}`);
   }
 
   isValid(game) {

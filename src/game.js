@@ -1,12 +1,28 @@
 'use strict';
 
-class Game {
+const FSM = require('./fsm.js');
+
+class Game extends FSM {
   constructor({ deck, process, states }) {
+    super({ states });
     this.deck = deck;
     this.card = {};
     this.input = {};
-    this.states = states;
     this.process = process;
+    this.draft = {
+      english: '',
+      russian: [],
+      description: '',
+    };
+  }
+
+  saveCard() {
+    this.deck.addCard(this.draft);
+    this.draft = {
+      english: '',
+      russian: [],
+      description: '',
+    };
   }
 
   start() {
@@ -25,17 +41,6 @@ class Game {
     this.input = key;
     this.update();
   };
-
-  update() {
-    this.state.execute(this);
-  }
-
-  changeState(newStateName) {
-    const state = this.states[newStateName];
-    this.state.exit(this);
-    this.state = state;
-    this.state.enter(this);
-  }
 
   // TODO вынести в cli
   write(str) {

@@ -1,11 +1,11 @@
 'use strict';
 
-const BaseState = require('./base.js');
+const { BaseState } = require('./base.js');
 
 class SuccessState extends BaseState {
   enter(game) {
     game.clear();
-    game.write('Success:\n');
+    game.write('Success!\n');
     game.write('\n');
 
     game.write(`english: ${game.card.english}\n`);

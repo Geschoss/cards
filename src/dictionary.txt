@@ -2,3 +2,4 @@ dictionary|словарь,словари|: a reference source in print or electr
 through|через,посредством,сквозь,благодаря|used as a function word to indicate movement into at one side or point and out at another and especially the opposite side of
 persist|сохраняться,остаются,продолжатся|: to continue to exist especially past a usual, expected, or normal time
 overtures|инициативы,попытки,авансы,увертюры,увертюр|: an initiative toward agreement or action
+handful|горсть,горстка,небольшое количество|:as much or as many as the hand will grasp

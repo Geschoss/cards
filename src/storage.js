@@ -6,6 +6,7 @@ const split = (splitter) => (str) => str.split(splitter);
 
 const ROW_SPLITTER = '\n';
 const KEYS_SPLITTER = '|';
+const VALUES_SPLITTER = ',';
 
 class Storage {
   async read() {
@@ -36,12 +37,14 @@ class FileStorage extends Storage {
 
   cardFromRow = ([english, russian, description]) => ({
     english,
-    russian: russian.split(','),
+    russian: russian.split(VALUES_SPLITTER),
     description,
   });
 
-  rowFromCard = (card) =>
-    this.keys.reduce((acc, key) => [...acc, card[key]], '').join(KEYS_SPLITTER);
+  rowFromCard = ({ english, russian, description }) =>
+    `${english}${KEYS_SPLITTER}${russian.join(
+      VALUES_SPLITTER
+    )}${KEYS_SPLITTER}${description}`;
 }
 
 module.exports = {

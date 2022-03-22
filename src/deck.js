@@ -23,6 +23,10 @@ class Deck {
     this.size = this.cards.length;
     await this.storage.append(card);
   }
+
+  getCards() {
+    return this.cards;
+  }
 }
 
 const createDeck = async (storage) => {
