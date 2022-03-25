@@ -1,7 +1,6 @@
 'use strict';
 
 const { BaseState, printDraft } = require('./base.js');
-const { KEYS } = require('../constants.js');
 
 class AddCardState extends BaseState {
   enter(game) {

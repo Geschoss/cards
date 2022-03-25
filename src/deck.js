@@ -2,30 +2,25 @@
 
 class Deck {
   constructor(storage) {
-    this.storage = storage;
-    this.cards = [];
+    this._storage = storage;
+    this._cards = [];
     this.size = 0;
   }
 
   async init() {
-    this.cards = await this.storage.read();
-    this.size = this.cards.length;
+    this._cards = await this._storage.read();
+    this.size = this._cards.length;
   }
 
-  // TODO add stategy
-  getCard() {
-    const cardIndex = Math.floor(Math.random() * this.size);
-    return this.cards[cardIndex];
-  }
   async addCard(card) {
     // TODO validator
-    this.cards.push(card);
-    this.size = this.cards.length;
-    await this.storage.append(card);
+    this._cards.push(card);
+    this.size = this._cards.length;
+    await this._storage.append(card);
   }
 
   getCards() {
-    return this.cards;
+    return this._cards;
   }
 }
 

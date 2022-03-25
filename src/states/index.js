@@ -9,12 +9,15 @@ const ReadDescriptionState = require('./readDescriptionState.js');
 const EndingState = require('./endingState.js');
 const AddCardState = require('./addCard.js');
 const ShowDeckState = require('./showDeck');
+const SelectStrategyState = require('./selectStrategy');
 
 const states = {};
 
 states['MainMenuState'] = new MainMenuState();
 
 states['ShowDeckState'] = new ShowDeckState();
+
+states['SelectStrategyState'] = new SelectStrategyState();
 
 states['PlayingState'] = new PlayingState();
 states['SuccessState'] = new SuccessState();
@@ -24,6 +27,5 @@ states['ReadEnglishState'] = new ReadEnglishState();
 states['ReadRussainState'] = new ReadRussainState();
 states['ReadDescriptionState'] = new ReadDescriptionState();
 states['EndingState'] = new EndingState();
-
 
 module.exports = { states };

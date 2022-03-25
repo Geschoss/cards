@@ -20,10 +20,10 @@ class MainMenuState extends BaseState {
         game.exit();
         break;
       case '1':
-        game.changeState('PlayingState');
+        game.changeState('SelectStrategyState');
         break;
       case '2':
-        game.changeState('AddCardState');
+        game.changeState('ReadEnglishState');
         break;
       case '3':
         game.changeState('ShowDeckState');

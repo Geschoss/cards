@@ -4,11 +4,9 @@ const { BaseState } = require('./base.js');
 
 class PlayingState extends BaseState {
   enter(game) {
-    game.shufflуDeck();
-
-    this.translate = '';
+    game.strategy.init(game);
+    this.guess = '';
     this.guesses = [];
-    this.showDescription = false;
     this.printInfo(game);
   }
 
@@ -17,29 +15,30 @@ class PlayingState extends BaseState {
 
     switch (sequence) {
       case '1':
-        this.translate = '';
+        this.guess = '';
         this.showDescription = true;
         this.printInfo(game);
         return;
       case '0':
         game.changeState('MainMenuState');
+        game.strategy.reset();
         return;
       case '\r':
-        if (this.isValid(game)) {
+        if (game.strategy.isValid(this.guess)) {
           game.changeState('SuccessState');
           return;
         }
-        this.guesses.push(this.translate);
-        this.translate = '';
+        this.guesses.push(this.guess);
+        this.guess = '';
         this.printInfo(game);
         return;
       case '\x7F':
-        this.translate = this.translate.slice(0, -1);
+        this.guess = this.guess.slice(0, -1);
         this.printInfo(game);
         return;
     }
 
-    this.translate = this.translate + sequence;
+    this.guess = this.guess + sequence;
     this.printInfo(game);
   }
 
@@ -47,20 +46,13 @@ class PlayingState extends BaseState {
     game.clear();
     game.write('Playing\n');
     game.write('1: Show description.\n');
-    game.write('0: Back to main menu.\n');
+    game.write('0: End.\n');
     game.write('\n');
-
-    game.write(`english: ${game.card.english}\n`);
-    if (this.showDescription) {
-      game.write(`description: ${game.card.description}\n`);
-    }
+    game.strategy.printInfo();
+    game.write('\n');
     game.write(`guesses: [${this.guesses.join(',')}]`);
     game.write('\n');
-    game.write(`> ${this.translate}`);
-  }
-
-  isValid(game) {
-    return game.card.russian.includes(this.translate);
+    game.write(`> ${this.guess}`);
   }
 }
 

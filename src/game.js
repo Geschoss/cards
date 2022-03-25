@@ -2,27 +2,27 @@
 
 const FSM = require('./fsm.js');
 
+const makeDraft = () => ({
+  english: '',
+  russian: [],
+  description: '',
+});
+
 class Game extends FSM {
-  constructor({ deck, process, states }) {
+  constructor({ deck, process, states, strategies }) {
     super({ states });
     this.deck = deck;
-    this.card = {};
     this.input = {};
+    this.card = {};
     this.process = process;
-    this.draft = {
-      english: '',
-      russian: [],
-      description: '',
-    };
+    this.strategies = strategies;
+    this.strategy = null;
+    this.draft = makeDraft;
   }
 
   saveCard() {
     this.deck.addCard(this.draft);
-    this.draft = {
-      english: '',
-      russian: [],
-      description: '',
-    };
+    this.draft = makeDraft();
   }
 
   start() {
@@ -31,10 +31,6 @@ class Game extends FSM {
 
     this.state = this.states['MainMenuState'];
     this.state.enter(this);
-  }
-
-  shufflуDeck() {
-    this.card = this.deck.getCard();
   }
 
   keypress = (_, key) => {

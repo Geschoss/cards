@@ -21,7 +21,7 @@ class ReadEnglishState extends BaseState {
         this.word = this.word.slice(0, -1);
         this.printInfo(game);
         return;
-      case '1':
+      case '0':
         game.changeState('AddCardState');
         return;
     }

@@ -1,5 +1,33 @@
 dictionary|словарь,словари|: a reference source in print or electronic form containing words usually alphabetically arranged along with information about their forms, pronunciations, functions, etymologies, meanings, and syntactic and idiomatic uses
 through|через,посредством,сквозь,благодаря|used as a function word to indicate movement into at one side or point and out at another and especially the opposite side of
-persist|сохраняться,остаются,продолжатся|: to continue to exist especially past a usual, expected, or normal time
+persist|сохраняться,остаются,продолжатся,сохранять|: to continue to exist especially past a usual, expected, or normal time
 overtures|инициативы,попытки,авансы,увертюры,увертюр|: an initiative toward agreement or action
 handful|горсть,горстка,небольшое количество|:as much or as many as the hand will grasp
+wisdom|мудрость,знания,ученость|:ability to discern inner qualities and relationships
+origin|происзождение,начало,корни,истоки|:rise, beginning, or derivation from a source
+humble|скромный,простой,смирение|:not proud
+perception|восприятие,понимание,впечатление,осознание|:a mental image :obsolete
+recently|недавно,давеча,|:during a recent period of time
+however|однако,хотя,впрочем,|in whatever manner or way that
+brewing|назревает,варка,пивоварение|to prepare (beer, ale, etc.) by steeping, boiling, and etc. :
+witness|свидетель,очевидец,показания|attestation of a fact or event
+vastly|значительно,гораздо,намного,|to a very greate or vast degree or extent
+rapidly|быстро,стремительно,оперативно,резко|marked by a fast rate of motion, activity, succession, or occurrence
+fate|судьба,участь,рок|destine
+is at hand|начинается|
+seminal|основополагающий,оригинальный,эпохальный,|of, relating to, or consisting of seed or semen
+approach|подход,метод,позиция|to make advances to especially in order to create a desired result
+invariably|неизбежно,всегда,неизменно|on every occasion :always
+among|среди|in or through the midst of : surrounded by
+particularly|особбено,особо,наиболее|to an unusual degree
+sophisticated|сложный,современный,утонченный,|:highly complicated or developed
+extraordinarily|чрезвычайно,необычайно,исключительно|going beyond what is usual, regular or customary[D[C[D[D[Dd[D[D[[C[C[C
+standout|выдающийся,безусловный победитель|one that is prominent or conspicuous especially because of excellence
+despite|вопреки,несмотря на,хотя|
+competent|компетентный,грамотный,квалифицированный,комплексный|proper or rightly pertinent
+particularly|особенно,особо,наиболее,весьма|being a single person or thing
+scalability|масштабируемость,расширяемость|capable of being scaled
+excellence|совершенство,превосходство,мастерство|the quality of veing excellent
+constrains|ограничения,сдержать,затруднять|
+broader|более широкий|
+apprehend|схватить,понять,понимать,задержать,постичь|:arrest :to grasp woth the understanding: recognize the meaning of

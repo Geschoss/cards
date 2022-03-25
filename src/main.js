@@ -5,6 +5,7 @@ readline.emitKeypressEvents(process.stdin);
 
 const { Game } = require('./game.js');
 const { states } = require('./states/');
+const { strategies } = require('./strategies');
 const { createDeck } = require('./deck.js');
 const { FileStorage } = require('./storage.js');
 
@@ -16,6 +17,7 @@ const main = async () => {
     deck,
     states,
     process,
+    strategies,
   });
   game.start();
 };

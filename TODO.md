@@ -1,9 +1,7 @@
-+ read from csv
-+ save new word to csv
-+ save in memory
-+ get random word
-+ play game
-
-- append new word
-- add different strategy
-- add colors
+- стратегии
+- изменение слова
+- показать ответ
+- статистика
+- при заполнении русских слов, если пустая строка при нажатии интер, то переходить дальше
+- модуль печати меню
+- модуль работы с инпутом
