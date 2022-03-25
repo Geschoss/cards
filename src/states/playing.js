@@ -11,6 +11,7 @@ class PlayingState extends BaseState {
     game.strategy.next();
     this.guess = '';
     this.guesses = [];
+    this.description = false;
     this.printInfo(game);
   }
 
@@ -19,8 +20,7 @@ class PlayingState extends BaseState {
 
     switch (sequence) {
       case '1':
-        this.guess = '';
-        this.showDescription = true;
+        this.description = true;
         this.printInfo(game);
         return;
       case '0':
@@ -53,6 +53,9 @@ class PlayingState extends BaseState {
     game.write('0: End.\n');
     game.write('\n');
     game.strategy.printInfo();
+    if (this.description) {
+      game.strategy.showDescription();
+    }
     game.write('\n');
     game.write(`guesses: [${this.guesses.join(',')}]`);
     game.write('\n');

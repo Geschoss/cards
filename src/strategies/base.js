@@ -21,6 +21,12 @@ class BaseStrategy {
     );
     this.game.write(`english: ${this.game.card.english}\n`);
   }
+
+  showDescription() {
+    this.game.write(
+      `description: ${this.game.card.description}\n`
+    );
+  }
 }
 
 module.exports = BaseStrategy;

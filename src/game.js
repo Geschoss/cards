@@ -17,7 +17,7 @@ class Game extends FSM {
     this.process = process;
     this.strategies = strategies;
     this.strategy = null;
-    this.draft = makeDraft;
+    this.draft = makeDraft();
   }
 
   saveCard() {
