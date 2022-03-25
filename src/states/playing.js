@@ -4,7 +4,11 @@ const { BaseState } = require('./base.js');
 
 class PlayingState extends BaseState {
   enter(game) {
-    game.strategy.init(game);
+    if (!game.strategy.hasNext()) {
+      game.changeState('GameOverState');
+      return;
+    }
+    game.strategy.next();
     this.guess = '';
     this.guesses = [];
     this.printInfo(game);
@@ -21,7 +25,7 @@ class PlayingState extends BaseState {
         return;
       case '0':
         game.changeState('MainMenuState');
-        game.strategy.reset();
+        game.strategy.end();
         return;
       case '\r':
         if (game.strategy.isValid(this.guess)) {

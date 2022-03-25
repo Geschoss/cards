@@ -4,18 +4,18 @@ class Deck {
   constructor(storage) {
     this._storage = storage;
     this._cards = [];
-    this.size = 0;
+    this._size = 0;
   }
 
   async init() {
     this._cards = await this._storage.read();
-    this.size = this._cards.length;
+    this._size = this._cards.length;
   }
 
   async addCard(card) {
     // TODO validator
     this._cards.push(card);
-    this.size = this._cards.length;
+    this._size = this._cards.length;
     await this._storage.append(card);
   }
 

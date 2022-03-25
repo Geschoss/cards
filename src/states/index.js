@@ -10,6 +10,7 @@ const EndingState = require('./endingState.js');
 const AddCardState = require('./addCard.js');
 const ShowDeckState = require('./showDeck');
 const SelectStrategyState = require('./selectStrategy');
+const GameOverState = require('./gameOver.js');
 
 const states = {};
 
@@ -21,6 +22,8 @@ states['SelectStrategyState'] = new SelectStrategyState();
 
 states['PlayingState'] = new PlayingState();
 states['SuccessState'] = new SuccessState();
+
+states['GameOverState'] = new GameOverState();
 
 states['AddCardState'] = new AddCardState();
 states['ReadEnglishState'] = new ReadEnglishState();

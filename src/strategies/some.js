@@ -3,9 +3,9 @@
 const BaseStrategy = require('./base.js');
 const array = require('../lib/array.js');
 
-class AllStrategy extends BaseStrategy {
-  name = 'all';
-  description = 'training all shuffled cards';
+class SomeStrategy extends BaseStrategy {
+  name = 'some';
+  description = 'training random 10 card';
   index = -1;
   game = null;
   cards = [];
@@ -16,9 +16,9 @@ class AllStrategy extends BaseStrategy {
 
   start(game) {
     this.game = game;
-    this.cards = array.shuffle([
-      ...this.game.deck.getCards(),
-    ]);
+    this.cards = array
+      .shuffle([...this.game.deck.getCards()])
+      .slice(0, 10);
   }
 
   next() {
@@ -31,4 +31,4 @@ class AllStrategy extends BaseStrategy {
   }
 }
 
-module.exports = AllStrategy;
+module.exports = SomeStrategy;

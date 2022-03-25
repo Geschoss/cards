@@ -3,15 +3,18 @@
 const BaseStrategy = require('./base.js');
 const array = require('../lib/array.js');
 
-class AllStrategy extends BaseStrategy {
-  name = 'all';
-  description = 'training all shuffled cards';
+const PLAY_TIME_SEC = 30;
+
+class TimeStrategy extends BaseStrategy {
+  name = 'time';
+  description = `training random cards wiht time limits (${PLAY_TIME_SEC} sec)`;
   index = -1;
   game = null;
   cards = [];
+  gameover = false;
 
   hasNext() {
-    return this.index + 1 < this.cards.length;
+    return !this.gameover;
   }
 
   start(game) {
@@ -19,6 +22,9 @@ class AllStrategy extends BaseStrategy {
     this.cards = array.shuffle([
       ...this.game.deck.getCards(),
     ]);
+    this.timer = setTimeout(() => {
+      this.gameover = true;
+    }, PLAY_TIME_SEC * 1000);
   }
 
   next() {
@@ -28,7 +34,8 @@ class AllStrategy extends BaseStrategy {
 
   end() {
     this.index = -1;
+    clearTimeout(this.timer);
   }
 }
 
-module.exports = AllStrategy;
+module.exports = TimeStrategy;

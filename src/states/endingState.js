@@ -3,7 +3,7 @@
 const { BaseState, printDraft } = require('./base.js');
 const { KEYS } = require('../constants.js');
 
-class EndingState extends BaseState {
+class EndingStateState extends BaseState {
   enter(game) {
     this.printInfo(game);
   }
@@ -31,4 +31,4 @@ class EndingState extends BaseState {
   }
 }
 
-module.exports = EndingState;
+module.exports = EndingStateState;

@@ -14,9 +14,9 @@ class SelectStrategyState extends BaseState {
           strategy.description
         })\n`
       );
-      game.write('\n');
     });
 
+    game.write('\n');
     game.write('0: Go ot main menu\n');
   }
   execute(game) {
@@ -33,6 +33,7 @@ class SelectStrategyState extends BaseState {
         game.strategies[selectedStrategy - 1];
       if (strategy) {
         game.strategy = strategy;
+        game.strategy.start(game);
         game.changeState('PlayingState');
         return;
       }
