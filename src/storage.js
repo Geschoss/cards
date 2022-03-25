@@ -22,7 +22,10 @@ class FileStorage extends Storage {
   }
 
   async read() {
-    const data = await fs.promises.readFile(this.path, 'utf8');
+    const data = await fs.promises.readFile(
+      this.path,
+      'utf8'
+    );
 
     return data
       .split(ROW_SPLITTER)
@@ -32,7 +35,10 @@ class FileStorage extends Storage {
   }
   async append(card) {
     const row = this.rowFromCard(card);
-    await fs.promises.appendFile(this.path, `${row}${ROW_SPLITTER}`);
+    await fs.promises.appendFile(
+      this.path,
+      `${row}${ROW_SPLITTER}`
+    );
   }
 
   cardFromRow = ([english, russian, description]) => ({

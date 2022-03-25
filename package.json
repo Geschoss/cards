@@ -2,9 +2,9 @@
   "name": "cards",
   "version": "0.0.1",
   "description": "cli app for learn english word",
-  "main": "src/main.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./src/main.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
