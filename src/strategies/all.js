@@ -17,7 +17,7 @@ class AllStrategy extends BaseStrategy {
   start(game) {
     this.game = game;
     this.cards = array.shuffle([
-      ...this.game.deck.getCards(),
+      ...this.game.getCards(),
     ]);
   }
 

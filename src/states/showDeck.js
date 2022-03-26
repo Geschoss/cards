@@ -9,7 +9,7 @@ class ShowDeckState extends BaseState {
     game.write('\n');
     game.write('0: Go back\n');
 
-    for (const card of game.deck.getCards()) {
+    for (const card of game.getCards()) {
       const { english, russian } = card;
       game.write(`[${english} - ${russian}]\n`);
     }

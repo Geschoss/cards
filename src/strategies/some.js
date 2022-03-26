@@ -17,7 +17,7 @@ class SomeStrategy extends BaseStrategy {
   start(game) {
     this.game = game;
     this.cards = array
-      .shuffle([...this.game.deck.getCards()])
+      .shuffle([...this.game.getCards()])
       .slice(0, 10);
   }
 

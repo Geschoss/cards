@@ -25,6 +25,10 @@ class Game extends FSM {
     this.draft = makeDraft();
   }
 
+  getCards() {
+    return this.deck.getCards();
+  }
+  
   start() {
     this.process.stdin.setRawMode(true);
     this.process.stdin.on('keypress', this.keypress);

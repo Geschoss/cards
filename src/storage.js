@@ -41,8 +41,14 @@ class FileStorage extends Storage {
     );
   }
 
-  cardFromRow = ([english, russian, description]) => ({
+  cardFromRow = ([
     english,
+    type,
+    russian,
+    description,
+  ]) => ({
+    english,
+    type,
     russian: russian.split(VALUES_SPLITTER),
     description,
   });

@@ -5,6 +5,7 @@ const { BaseState } = require('./base.js');
 class PlayingState extends BaseState {
   enter(game) {
     if (!game.strategy.hasNext()) {
+      game.strategy.end();
       game.changeState('GameOverState');
       return;
     }

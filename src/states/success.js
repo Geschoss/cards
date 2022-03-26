@@ -9,6 +9,7 @@ class SuccessState extends BaseState {
     game.write('\n');
 
     game.write(`english: ${game.card.english}\n`);
+    game.write(`type: ${game.card.type}\n`);
     game.write(`russian: ${game.card.russian.join(' ')}\n`);
     game.write(`description: ${game.card.description}\n`);
     game.write('\n');

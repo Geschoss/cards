@@ -20,6 +20,7 @@ class BaseStrategy {
       `card ${this.index + 1} of ${this.cards.length}\n`
     );
     this.game.write(`english: ${this.game.card.english}\n`);
+    this.game.write(`type: ${this.game.card.type}\n`);
   }
 
   showDescription() {
